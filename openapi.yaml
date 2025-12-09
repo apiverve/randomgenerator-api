@@ -1,0 +1,86 @@
+openapi: 3.0.4
+info:
+  title: Random Data Generator
+  description: Random Generator is a simple tool for generating random data. It returns random data such as numbers, strings, and more.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/randomgenerator:
+    get:
+      summary: Generate Random Data
+      description: Random Generator is a simple tool for generating random data. It returns random data such as numbers, strings, and more.
+      operationId: randomgenerator
+      parameters:
+      - name: type
+        default: number
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The type of random data to generate (e.g., number, dice, phone, date, coin, uuid, guid, color, name, email, username, address)
+        example: number
+      - name: count
+        default: '1'
+        in: query
+        schema:
+          type: integer
+        required: false
+        description: The number of random data to generate
+        example: '1'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  type: phone
+                  count: 10
+                  data:
+                  - (364) 770-8812
+                  - (827) 720-3964 x763
+                  - 1-898-417-2358 x46110
+                  - 365.480.9402
+                  - (969) 592-7408 x66689
+                  - 459.782.6464 x8246
+                  - 231.883.7848 x0025
+                  - 858.762.1413 x820
+                  - (950) 934-0850 x85099
+                  - (440) 213-3300 x538
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
