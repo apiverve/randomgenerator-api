@@ -1,41 +1,41 @@
 openapi: 3.0.4
 info:
   title: Random Data Generator
-  description: Random Generator is a simple tool for generating random data. It returns random data such as numbers, strings, and more.
+  description: >-
+    Random Generator is a simple tool for generating random data. It returns
+    random data such as numbers, strings, and more.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/randomgenerator:
     get:
       summary: Generate Random Data
-      description: Random Generator is a simple tool for generating random data. It returns random data such as numbers, strings, and more.
+      description: Generate random data of various types
       operationId: randomgenerator
       parameters:
-      - name: type
-        default: number
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The type of random data to generate (e.g., number, dice, phone, date, coin, uuid, guid, color, name, email, username, address)
-        example: number
-      - name: count
-        default: '1'
-        in: query
-        schema:
-          type: integer
-        required: false
-        description: The number of random data to generate
-        example: '1'
+        - name: type
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The type of random data to generate
+          example: number
+        - name: count
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: The number of random data to generate (1 to 100)
+          example: 10
       responses:
         '200':
           description: Successful Response
@@ -51,31 +51,31 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   type: phone
                   count: 10
                   data:
-                  - (364) 770-8812
-                  - (827) 720-3964 x763
-                  - 1-898-417-2358 x46110
-                  - 365.480.9402
-                  - (969) 592-7408 x66689
-                  - 459.782.6464 x8246
-                  - 231.883.7848 x0025
-                  - 858.762.1413 x820
-                  - (950) 934-0850 x85099
-                  - (440) 213-3300 x538
+                    - 967-950-4587
+                    - 792-611-7468 x1293
+                    - (933) 311-9829
+                    - 389.357.7403 x793
+                    - 1-621-490-6394
+                    - 1-699-562-6833 x8558
+                    - 875.226.1530 x641
+                    - 744-991-0150 x1974
+                    - 1-393-784-0533 x15199
+                    - 954-876-6958 x0398
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -83,4 +83,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
