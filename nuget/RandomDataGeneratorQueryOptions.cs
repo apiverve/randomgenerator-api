@@ -11,15 +11,13 @@ namespace APIVerve.API.RandomDataGenerator
     public class RandomDataGeneratorQueryOptions
     {
         /// <summary>
-        /// The type of random data to generate (e.g., number, dice, phone, date, coin, uuid, guid, color, name, email, username, address)
-        /// Example: number
+        /// The type of random data to generate
         /// </summary>
         [JsonProperty("type")]
         public string Type { get; set; }
 
         /// <summary>
-        /// The number of random data to generate
-        /// Example: 1
+        /// The number of random data to generate (1 to 100)
         /// </summary>
         [JsonProperty("count")]
         public string Count { get; set; }
