@@ -30,7 +30,7 @@ class randomgeneratorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/randomgenerator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"type":{"type":"string","required":true,"default":"number"},"count":{"type":"integer","required":false,"min":1,"max":100,"default":1}};
+        this.validationRules = {"type":{"type":"string","required":true,"default":"number"},"count":{"type":"integer","required":false,"min":1,"max":100,"default":1},"includeAvatar":{"type":"boolean","required":false,"default":false}};
     }
 
     /**
