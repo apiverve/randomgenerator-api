@@ -7,7 +7,7 @@ Random Generator is a simple tool for generating random data. It returns random 
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/randomgenerator.svg)](https://www.npmjs.com/package/@apiverve/randomgenerator)
 
-This is a Javascript Wrapper for the [Random Data Generator API](https://apiverve.com/marketplace/randomgenerator?utm_source=npm&utm_medium=readme)
+This is a Javascript Wrapper for the [Random Data Generator API](https://randomgenerator.apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -61,7 +61,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   type: "number",
-  count: 1
+  count: 1,
+  includeAvatar: false
 };
 
 api.execute(query, function (error, data) {
@@ -82,7 +83,8 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   type: "number",
-  count: 1
+  count: 1,
+  includeAvatar: false
 };
 
 api.execute(query)
@@ -104,7 +106,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   type: "number",
-  count: 1
+  count: 1,
+  includeAvatar: false
 };
 
     try {
@@ -128,16 +131,16 @@ async function makeRequest() {
     "type": "phone",
     "count": 10,
     "data": [
-      "(364) 770-8812",
-      "(827) 720-3964 x763",
-      "1-898-417-2358 x46110",
-      "365.480.9402",
-      "(969) 592-7408 x66689",
-      "459.782.6464 x8246",
-      "231.883.7848 x0025",
-      "858.762.1413 x820",
-      "(950) 934-0850 x85099",
-      "(440) 213-3300 x538"
+      "967-950-4587",
+      "792-611-7468 x1293",
+      "(933) 311-9829",
+      "389.357.7403 x793",
+      "1-621-490-6394",
+      "1-699-562-6833 x8558",
+      "875.226.1530 x641",
+      "744-991-0150 x1974",
+      "1-393-784-0533 x15199",
+      "954-876-6958 x0398"
     ]
   }
 }
