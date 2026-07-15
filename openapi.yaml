@@ -36,6 +36,13 @@ paths:
           required: false
           description: The number of random data to generate (1 to 100)
           example: 10
+        - name: includeAvatar
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Include an AI-generated face avatar (only applies when type=name)
+          example: true
       responses:
         '200':
           description: Successful Response
