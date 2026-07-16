@@ -20,6 +20,12 @@ namespace APIVerve.API.RandomDataGenerator
         /// The number of random data to generate (1 to 100)
         /// </summary>
         [JsonProperty("count")]
-        public string Count { get; set; }
+        public int? Count { get; set; }
+
+        /// <summary>
+        /// Include an AI-generated face avatar (only applies when type=name)
+        /// </summary>
+        [JsonProperty("includeAvatar")]
+        public bool? IncludeAvatar { get; set; }
     }
 }
