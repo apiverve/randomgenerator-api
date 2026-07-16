@@ -7,7 +7,7 @@ Random Generator is a simple tool for generating random data. It returns random 
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [RandomDataGenerator API](https://apiverve.com/marketplace/randomgenerator?utm_source=nuget&utm_medium=readme)
+This is a .NET Wrapper for the [RandomDataGenerator API](https://randomgenerator.apiverve.com?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.RandomDataGenerator;
 
 class Program
 {
@@ -60,9 +60,10 @@ class Program
         // Initialize the API client
         var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+        var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
         // Make the API call
@@ -117,7 +118,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RandomDataGenerator;
 
 public class Example
 {
@@ -125,9 +126,10 @@ public class Example
     {
         var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+        var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -150,7 +152,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.RandomDataGenerator;
 
 public class Example
 {
@@ -158,9 +160,10 @@ public class Example
     {
         var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+        var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -188,7 +191,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RandomDataGenerator;
 
 public class Example
 {
@@ -196,9 +199,10 @@ public class Example
     {
         var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+        var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
         try
@@ -241,7 +245,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RandomDataGenerator;
 
 public class Example
 {
@@ -253,9 +257,10 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+        var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
         try
@@ -295,9 +300,10 @@ var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -322,9 +328,10 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -341,9 +348,10 @@ var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -354,9 +362,10 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    type = "number",
-    count = 1
+var queryOptions = new RandomDataGeneratorQueryOptions {
+    Type = "number",
+    Count = 1,
+    IncludeAvatar = true
 };
 
 using (var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -379,16 +388,16 @@ using (var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]"))
     "type": "phone",
     "count": 10,
     "data": [
-      "(364) 770-8812",
-      "(827) 720-3964 x763",
-      "1-898-417-2358 x46110",
-      "365.480.9402",
-      "(969) 592-7408 x66689",
-      "459.782.6464 x8246",
-      "231.883.7848 x0025",
-      "858.762.1413 x820",
-      "(950) 934-0850 x85099",
-      "(440) 213-3300 x538"
+      "967-950-4587",
+      "792-611-7468 x1293",
+      "(933) 311-9829",
+      "389.357.7403 x793",
+      "1-621-490-6394",
+      "1-699-562-6833 x8558",
+      "875.226.1530 x641",
+      "744-991-0150 x1974",
+      "1-393-784-0533 x15199",
+      "954-876-6958 x0398"
     ]
   }
 }
