@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,8 +24,9 @@ class ValidationError(RandomgeneratorAPIClientError):
 class RandomgeneratorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "type": {"type": "string", "required": True, "default": "number"},
-        "count": {"type": "integer", "required": False, "min": 1, "max": 100, "default": 1}
+        "type": {"type": "string", "required": False, "default": "number"},
+        "count": {"type": "integer", "required": False, "min": 1, "max": 100, "default": 1},
+        "includeAvatar": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
