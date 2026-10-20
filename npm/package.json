@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/randomgenerator",
-  "version": "1.2.0",
-  "description": "Random Generator is a simple tool for generating random data. It returns random data such as numbers, strings, and more.",
+  "version": "1.2.2",
+  "description": "Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "random generator", "random data generator", "random generator api", "random data generator api", "random generator tool"
+    "random number generator api", "random number api", "random data generator api", "dummy json data generator", "mock json data"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/randomgenerator-api/issues"
   },
-  "homepage": "https://randomgenerator.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/randomgenerator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
