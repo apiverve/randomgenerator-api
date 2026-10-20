@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Random Data Generator
   description: >-
-    Random Generator is a simple tool for generating random data. It returns
-    random data such as numbers, strings, and more.
+    Random Data Generator produces mock values including names, emails,
+    addresses, dates, and UUIDs for application testing. Specify a supported
+    data type to receive a generated record; paid plans can generate batches up
+    to 100 items.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/randomgenerator:
     get:
-      summary: Generate Random Data
+      summary: Random Data Generator
       description: Generate random data of various types
       operationId: randomgenerator
       parameters:
@@ -26,7 +28,7 @@ paths:
           in: query
           schema:
             type: string
-          required: true
+          required: false
           description: The type of random data to generate
           example: number
         - name: count

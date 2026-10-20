@@ -1,13 +1,13 @@
-# [Random Data Generator API](https://randomgenerator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Random Data Generator API](https://apiverve.com/marketplace/randomgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Random Generator is a simple tool for generating random data. It returns random data such as numbers, strings, and more.
+Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.
 
 The Random Data Generator API provides a simple, reliable way to integrate random data generator functionality into your applications. Built for developers who need production-ready random data generator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://randomgenerator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/randomgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://randomgenerator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/randomgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/randomgenerator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Random Data Generator API](https://randomgenerator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Random Data Generator API](https://apiverve.com/marketplace/randomgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/randomgenerator](https://docs.apiverve.com/ref/randomgenerator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +191,41 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Random Data Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "type": "phone",
+    "count": 10,
+    "data": [
+      "967-950-4587",
+      "792-611-7468 x1293",
+      "(933) 311-9829",
+      "389.357.7403 x793",
+      "1-621-490-6394",
+      "1-699-562-6833 x8558",
+      "875.226.1530 x641",
+      "744-991-0150 x1974",
+      "1-393-784-0533 x15199",
+      "954-876-6958 x0398"
+    ]
+  }
 }
 ```
 
@@ -203,7 +233,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Random Data Generator API](https://randomgenerator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Random Data Generator API](https://apiverve.com/marketplace/randomgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
