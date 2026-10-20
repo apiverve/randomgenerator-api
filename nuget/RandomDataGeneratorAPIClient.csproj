@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>RandomDataGenerator</Title>
-    <Version>1.2.0</Version>
+    <Title>Random Data Generator API</Title>
+    <Version>1.2.2</Version>
     <Authors>APIVerve</Authors>
     <Company>APIVerve</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -12,30 +12,32 @@
 
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    <PackageProjectUrl>https://randomgenerator.apiverve.com?utm_source=nuget&amp;utm_medium=homepage</PackageProjectUrl>
+    <PackageProjectUrl>https://apiverve.com/marketplace/randomgenerator?utm_source=nuget&amp;utm_medium=referral&amp;utm_content=homepage</PackageProjectUrl>
     <SignAssembly>False</SignAssembly>
-    <Description>Random Generator is a simple tool for generating random data. It returns random data such as numbers, strings, and more.</Description>
+    <Description>Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.</Description>
     <RepositoryUrl>https://github.com/apiverve/randomgenerator-api</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>random generator;random data generator;random generator api;random data generator api;random generator tool;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
+    <PackageTags>random-number-generator-api;random-number-api;random-data-generator-api;dummy-json-data-generator;mock-json-data;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
     <Copyright>©2026 APIVerve. All Rights Reserved</Copyright>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <PackageIcon>favicon@128.png</PackageIcon>
     <BaseOutputPath>.\bin</BaseOutputPath>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <PackageId>APIVerve.API.RandomDataGenerator</PackageId>
     <Nullable>disable</Nullable>
     <LangVersion>latest</LangVersion>
 
-    <!-- SourceLink Support -->
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- Built from a generator checkout, not this repo: its git state would stamp the wrong
+         commit onto RepositoryUrl. -->
+    <EnableSourceLink>false</EnableSourceLink>
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
     <!-- Package Release Notes -->
-    <PackageReleaseNotes>Initial release of RandomDataGenerator API client. Features include async/await support, automatic retries, custom headers, request logging, and cancellation token support.</PackageReleaseNotes>
+    <PackageReleaseNotes>Random Data Generator API client for .NET, version 1.2.2. Features include async/await support, automatic retries, custom headers, request logging, and cancellation token support.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -69,7 +71,6 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">

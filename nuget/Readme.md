@@ -1,13 +1,12 @@
-RandomDataGenerator API
+Random Data Generator API
 ============
 
-Random Generator is a simple tool for generating random data. It returns random data such as numbers, strings, and more.
+Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [RandomDataGenerator API](https://randomgenerator.apiverve.com?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.RandomDataGenerator.svg)](https://www.nuget.org/packages/APIVerve.API.RandomDataGenerator)
+
+This is a .NET wrapper for the [Random Data Generator API](https://apiverve.com/marketplace/randomgenerator?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the randomgenerator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Random Data Generator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,10 +60,10 @@ class Program
         var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new RandomDataGeneratorQueryOptions {
-    Type = "number",
-    Count = 1,
-    IncludeAvatar = true
-};
+            Type = "number",
+            Count = 1,
+            IncludeAvatar = true
+        };
 
         // Make the API call
         try
@@ -94,13 +93,13 @@ class Program
 
 ## Usage
 
-The RandomDataGenerator API documentation is found here: [https://docs.apiverve.com/ref/randomgenerator](https://docs.apiverve.com/ref/randomgenerator?utm_source=nuget&utm_medium=readme).
+The Random Data Generator API documentation is found here: [https://docs.apiverve.com/ref/randomgenerator](https://docs.apiverve.com/ref/randomgenerator?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-RandomDataGenerator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Random Data Generator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -127,10 +126,10 @@ public class Example
         var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new RandomDataGeneratorQueryOptions {
-    Type = "number",
-    Count = 1,
-    IncludeAvatar = true
-};
+            Type = "number",
+            Count = 1,
+            IncludeAvatar = true
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -161,10 +160,10 @@ public class Example
         var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new RandomDataGeneratorQueryOptions {
-    Type = "number",
-    Count = 1,
-    IncludeAvatar = true
-};
+            Type = "number",
+            Count = 1,
+            IncludeAvatar = true
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -200,10 +199,10 @@ public class Example
         var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new RandomDataGeneratorQueryOptions {
-    Type = "number",
-    Count = 1,
-    IncludeAvatar = true
-};
+            Type = "number",
+            Count = 1,
+            IncludeAvatar = true
+        };
 
         try
         {
@@ -258,10 +257,10 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new RandomDataGeneratorQueryOptions {
-    Type = "number",
-    Count = 1,
-    IncludeAvatar = true
-};
+            Type = "number",
+            Count = 1,
+            IncludeAvatar = true
+        };
 
         try
         {
@@ -407,7 +406,7 @@ using (var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -418,12 +417,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
