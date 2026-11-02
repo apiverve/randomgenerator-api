@@ -1,6 +1,6 @@
 # [Random Data Generator API](https://apiverve.com/marketplace/randomgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.
+Random Data Generator produces random numbers in any range (whole or decimal, with or without repeats), dice of any size, coin flips, booleans, random strings, UUIDs, and mock names, emails, addresses and dates for application testing. Numbers, dice, coins, booleans and strings come from a cryptographically secure generator. Paid plans can generate batches up to 100 items.
 
 The Random Data Generator API provides a simple, reliable way to integrate random data generator functionality into your applications. Built for developers who need production-ready random data generator capabilities without the complexity of building from scratch.
 
@@ -31,7 +31,14 @@ The Random Data Generator API provides a simple, reliable way to integrate rando
 async function callRandomDataGeneratorAPI() {
     try {
         const params = new URLSearchParams({
-            type: 'number'
+            type: 'number',
+            min: 1,
+            max: 100,
+            decimals: 2,
+            unique: true,
+            sides: 20,
+            length: 16,
+            charset: 'alphanumeric'
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/randomgenerator?${params}`, {
@@ -54,7 +61,7 @@ callRandomDataGeneratorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/randomgenerator?type=number" \
+curl -X GET "https://api.apiverve.com/v1/randomgenerator?type=number&min=1&max=100&decimals=2&unique=true&sides=20&length=16&charset=alphanumeric" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 

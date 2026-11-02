@@ -18,7 +18,7 @@ def call_randomgenerator_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;type&#x27;: &#x27;number&#x27;}
+        params &#x3D; {&#x27;type&#x27;: &#x27;number&#x27;, &#x27;min&#x27;: 1, &#x27;max&#x27;: 100, &#x27;decimals&#x27;: 2, &#x27;unique&#x27;: true, &#x27;sides&#x27;: 20, &#x27;length&#x27;: 16, &#x27;charset&#x27;: &#x27;alphanumeric&#x27;}
 
         headers = {
             'x-api-key': API_KEY

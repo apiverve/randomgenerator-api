@@ -15,7 +15,14 @@ async function callRandomDataGeneratorAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            type: &#x27;number&#x27;
+            type: &#x27;number&#x27;,
+            min: 1,
+            max: 100,
+            decimals: 2,
+            unique: true,
+            sides: 20,
+            length: 16,
+            charset: &#x27;alphanumeric&#x27;
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

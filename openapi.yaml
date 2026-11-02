@@ -2,10 +2,12 @@ openapi: 3.0.4
 info:
   title: Random Data Generator
   description: >-
-    Random Data Generator produces mock values including names, emails,
-    addresses, dates, and UUIDs for application testing. Specify a supported
-    data type to receive a generated record; paid plans can generate batches up
-    to 100 items.
+    Random Data Generator produces random numbers in any range (whole or
+    decimal, with or without repeats), dice of any size, coin flips, booleans,
+    random strings, UUIDs, and mock names, emails, addresses and dates for
+    application testing. Numbers, dice, coins, booleans and strings come from a
+    cryptographically secure generator. Paid plans can generate batches up to
+    100 items.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -45,6 +47,55 @@ paths:
           required: false
           description: Include an AI-generated face avatar (only applies when type=name)
           example: true
+        - name: min
+          in: query
+          schema:
+            type: number
+          required: false
+          description: Smallest number to draw, inclusive (type=number). Defaults to 0
+          example: 1
+        - name: max
+          in: query
+          schema:
+            type: number
+          required: false
+          description: Largest number to draw, inclusive (type=number). Defaults to 999999
+          example: 100
+        - name: decimals
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Decimal places for type=number (0 to 10); 0 draws whole numbers
+          example: 2
+        - name: unique
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Draw without repeats (type=number with whole numbers, or type=dice)
+          example: true
+        - name: sides
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Number of sides on each die for type=dice (2 to 1000)
+          example: 20
+        - name: length
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: Length of each value for type=string (1 to 256)
+          example: 16
+        - name: charset
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Characters for type=string
+          example: alphanumeric
       responses:
         '200':
           description: Successful Response

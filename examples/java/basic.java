@@ -15,6 +15,13 @@ public class BasicExample {
             // Query parameters
             Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
         parameters.put(&quot;type&quot;, &quot;number&quot;);
+        parameters.put(&quot;min&quot;, 1);
+        parameters.put(&quot;max&quot;, 100);
+        parameters.put(&quot;decimals&quot;, 2);
+        parameters.put(&quot;unique&quot;, true);
+        parameters.put(&quot;sides&quot;, 20);
+        parameters.put(&quot;length&quot;, 16);
+        parameters.put(&quot;charset&quot;, &quot;alphanumeric&quot;);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);
