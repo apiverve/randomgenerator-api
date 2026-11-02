@@ -1,6 +1,6 @@
 # Random Data Generator API - Ruby Gem
 
-Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.
+Random Data Generator produces random numbers in any range (whole or decimal, with or without repeats), dice of any size, coin flips, booleans, random strings, UUIDs, and mock names, emails, addresses and dates for application testing. Numbers, dice, coins, booleans and strings come from a cryptographically secure generator. Paid plans can generate batches up to 100 items.
 
 ## Installation
 
@@ -38,7 +38,14 @@ client = APIVerve::Randomgenerator::Client.new(api_key: "YOUR_API_KEY")
 response = client.execute({
   type: "number",
   count: 1,
-  includeAvatar: true
+  includeAvatar: true,
+  min: 1,
+  max: 999999,
+  decimals: 2,
+  unique: true,
+  sides: 6,
+  length: 16,
+  charset: "alphanumeric"
 })
 
 # Print the response
@@ -50,7 +57,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ type: "number", count: 1, includeAvatar: true })
+  response = client.execute({ type: "number", count: 1, includeAvatar: true, min: 1, max: 999999, decimals: 2, unique: true, sides: 6, length: 16, charset: "alphanumeric" })
   puts response["data"]
 rescue APIVerve::Randomgenerator::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
