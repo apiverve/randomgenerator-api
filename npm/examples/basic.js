@@ -17,7 +17,14 @@ const api = new randomgeneratorAPI({
 var query = {
   type: "number",
   count: 1,
-  includeAvatar: false
+  includeAvatar: false,
+  min: 0,
+  max: 999999,
+  decimals: 0,
+  unique: false,
+  sides: 6,
+  length: 16,
+  charset: "alphanumeric"
 };
 
 // Make the API request using callback

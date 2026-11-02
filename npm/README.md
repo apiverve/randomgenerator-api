@@ -1,6 +1,6 @@
 # Random Data Generator API
 
-Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.
+Random Data Generator produces random numbers in any range (whole or decimal, with or without repeats), dice of any size, coin flips, booleans, random strings, UUIDs, and mock names, emails, addresses and dates for application testing. Numbers, dice, coins, booleans and strings come from a cryptographically secure generator. Paid plans can generate batches up to 100 items.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/randomgenerator.svg)](https://www.npmjs.com/package/@apiverve/randomgenerator)
 
@@ -59,7 +59,14 @@ Using the API is simple. All you have to do is make a request. The API will retu
 var query = {
   type: "number",
   count: 1,
-  includeAvatar: false
+  includeAvatar: false,
+  min: 0,
+  max: 999999,
+  decimals: 0,
+  unique: false,
+  sides: 6,
+  length: 16,
+  charset: "alphanumeric"
 };
 
 api.execute(query, function (error, data) {
@@ -81,7 +88,14 @@ You can also use promises to make requests. The API returns a promise that you c
 var query = {
   type: "number",
   count: 1,
-  includeAvatar: false
+  includeAvatar: false,
+  min: 0,
+  max: 999999,
+  decimals: 0,
+  unique: false,
+  sides: 6,
+  length: 16,
+  charset: "alphanumeric"
 };
 
 api.execute(query)
@@ -104,7 +118,14 @@ async function makeRequest() {
     var query = {
   type: "number",
   count: 1,
-  includeAvatar: false
+  includeAvatar: false,
+  min: 0,
+  max: 999999,
+  decimals: 0,
+  unique: false,
+  sides: 6,
+  length: 16,
+  charset: "alphanumeric"
 };
 
     try {

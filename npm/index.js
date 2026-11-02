@@ -30,7 +30,7 @@ class randomgeneratorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/randomgenerator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"type":{"type":"string","required":false,"default":"number"},"count":{"type":"integer","required":false,"min":1,"max":100,"default":1},"includeAvatar":{"type":"boolean","required":false,"default":false}};
+        this.validationRules = {"type":{"type":"string","required":false,"default":"number"},"count":{"type":"integer","required":false,"min":1,"max":100,"default":1},"includeAvatar":{"type":"boolean","required":false,"default":false},"min":{"type":"number","required":false,"default":0},"max":{"type":"number","required":false,"default":999999},"decimals":{"type":"integer","required":false,"min":0,"max":10,"default":0},"unique":{"type":"boolean","required":false,"default":false},"sides":{"type":"integer","required":false,"min":2,"max":1000,"default":6},"length":{"type":"integer","required":false,"min":1,"max":256,"default":16},"charset":{"type":"string","required":false,"default":"alphanumeric"}};
     }
 
     /**
