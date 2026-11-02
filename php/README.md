@@ -1,6 +1,6 @@
 # Random Data Generator API - PHP Package
 
-Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.
+Random Data Generator produces random numbers in any range (whole or decimal, with or without repeats), dice of any size, coin flips, booleans, random strings, UUIDs, and mock names, emails, addresses and dates for application testing. Numbers, dice, coins, booleans and strings come from a cryptographically secure generator. Paid plans can generate batches up to 100 items.
 
 ## Installation
 
@@ -30,7 +30,14 @@ $client = new Client('YOUR_API_KEY');
 $response = $client->execute([
     'type' => 'number',
     'count' => 1,
-    'includeAvatar' => true
+    'includeAvatar' => true,
+    'min' => 1,
+    'max' => 999999,
+    'decimals' => 2,
+    'unique' => true,
+    'sides' => 6,
+    'length' => 16,
+    'charset' => 'alphanumeric'
 ]);
 
 // Print the response
@@ -46,7 +53,7 @@ use APIVerve\Randomgenerator\Exceptions\APIException;
 use APIVerve\Randomgenerator\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['type' => 'number', 'count' => 1, 'includeAvatar' => true]);
+    $response = $client->execute(['type' => 'number', 'count' => 1, 'includeAvatar' => true, 'min' => 1, 'max' => 999999, 'decimals' => 2, 'unique' => true, 'sides' => 6, 'length' => 16, 'charset' => 'alphanumeric']);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());

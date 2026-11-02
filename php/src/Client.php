@@ -15,7 +15,7 @@ use APIVerve\Randomgenerator\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['type' => 'number', 'count' => 1, 'includeAvatar' => true]);
+ * $response = $client->execute(['type' => 'number', 'count' => 1, 'includeAvatar' => true, 'min' => 1, 'max' => 999999, 'decimals' => 2, 'unique' => true, 'sides' => 6, 'length' => 16, 'charset' => 'alphanumeric']);
  * print_r($response);
  * ```
  *
@@ -36,7 +36,14 @@ class Client
     private const VALIDATION_RULES = [
         'type' => ['type' => 'string', 'required' => false],
         'count' => ['type' => 'integer', 'required' => false, 'min' => 1, 'max' => 100],
-        'includeAvatar' => ['type' => 'boolean', 'required' => false]
+        'includeAvatar' => ['type' => 'boolean', 'required' => false],
+        'min' => ['type' => 'number', 'required' => false],
+        'max' => ['type' => 'number', 'required' => false],
+        'decimals' => ['type' => 'integer', 'required' => false, 'min' => 0, 'max' => 10],
+        'unique' => ['type' => 'boolean', 'required' => false],
+        'sides' => ['type' => 'integer', 'required' => false, 'min' => 2, 'max' => 1000],
+        'length' => ['type' => 'integer', 'required' => false, 'min' => 1, 'max' => 256],
+        'charset' => ['type' => 'string', 'required' => false]
     ];
 
     /**
