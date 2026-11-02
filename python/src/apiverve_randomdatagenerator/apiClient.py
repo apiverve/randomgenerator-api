@@ -26,7 +26,14 @@ class RandomgeneratorAPIClient:
     VALIDATION_RULES = {
         "type": {"type": "string", "required": False, "default": "number"},
         "count": {"type": "integer", "required": False, "min": 1, "max": 100, "default": 1},
-        "includeAvatar": {"type": "boolean", "required": False, "default": False}
+        "includeAvatar": {"type": "boolean", "required": False, "default": False},
+        "min": {"type": "number", "required": False, "default": 0},
+        "max": {"type": "number", "required": False, "default": 999999},
+        "decimals": {"type": "integer", "required": False, "min": 0, "max": 10, "default": 0},
+        "unique": {"type": "boolean", "required": False, "default": False},
+        "sides": {"type": "integer", "required": False, "min": 2, "max": 1000, "default": 6},
+        "length": {"type": "integer", "required": False, "min": 1, "max": 256, "default": 16},
+        "charset": {"type": "string", "required": False, "default": "alphanumeric"}
     }
 
     # Format validation patterns
