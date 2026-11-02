@@ -1,7 +1,7 @@
 Random Data Generator API
 ============
 
-Random Data Generator produces mock values including names, emails, addresses, dates, and UUIDs for application testing. Specify a supported data type to receive a generated record; paid plans can generate batches up to 100 items.
+Random Data Generator produces random numbers in any range (whole or decimal, with or without repeats), dice of any size, coin flips, booleans, random strings, UUIDs, and mock names, emails, addresses and dates for application testing. Numbers, dice, coins, booleans and strings come from a cryptographically secure generator. Paid plans can generate batches up to 100 items.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.RandomDataGenerator.svg)](https://www.nuget.org/packages/APIVerve.API.RandomDataGenerator)
@@ -62,7 +62,14 @@ class Program
         var queryOptions = new RandomDataGeneratorQueryOptions {
             Type = "number",
             Count = 1,
-            IncludeAvatar = true
+            IncludeAvatar = true,
+            Min = 1,
+            Max = 999999,
+            Decimals = 2,
+            Unique = true,
+            Sides = 6,
+            Length = 16,
+            Charset = "alphanumeric"
         };
 
         // Make the API call
@@ -128,7 +135,14 @@ public class Example
         var queryOptions = new RandomDataGeneratorQueryOptions {
             Type = "number",
             Count = 1,
-            IncludeAvatar = true
+            IncludeAvatar = true,
+            Min = 1,
+            Max = 999999,
+            Decimals = 2,
+            Unique = true,
+            Sides = 6,
+            Length = 16,
+            Charset = "alphanumeric"
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -162,7 +176,14 @@ public class Example
         var queryOptions = new RandomDataGeneratorQueryOptions {
             Type = "number",
             Count = 1,
-            IncludeAvatar = true
+            IncludeAvatar = true,
+            Min = 1,
+            Max = 999999,
+            Decimals = 2,
+            Unique = true,
+            Sides = 6,
+            Length = 16,
+            Charset = "alphanumeric"
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -201,7 +222,14 @@ public class Example
         var queryOptions = new RandomDataGeneratorQueryOptions {
             Type = "number",
             Count = 1,
-            IncludeAvatar = true
+            IncludeAvatar = true,
+            Min = 1,
+            Max = 999999,
+            Decimals = 2,
+            Unique = true,
+            Sides = 6,
+            Length = 16,
+            Charset = "alphanumeric"
         };
 
         try
@@ -259,7 +287,14 @@ public class Example
         var queryOptions = new RandomDataGeneratorQueryOptions {
             Type = "number",
             Count = 1,
-            IncludeAvatar = true
+            IncludeAvatar = true,
+            Min = 1,
+            Max = 999999,
+            Decimals = 2,
+            Unique = true,
+            Sides = 6,
+            Length = 16,
+            Charset = "alphanumeric"
         };
 
         try
@@ -302,7 +337,14 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 var queryOptions = new RandomDataGeneratorQueryOptions {
     Type = "number",
     Count = 1,
-    IncludeAvatar = true
+    IncludeAvatar = true,
+    Min = 1,
+    Max = 999999,
+    Decimals = 2,
+    Unique = true,
+    Sides = 6,
+    Length = 16,
+    Charset = "alphanumeric"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -330,7 +372,14 @@ apiClient.SetLogger(message =>
 var queryOptions = new RandomDataGeneratorQueryOptions {
     Type = "number",
     Count = 1,
-    IncludeAvatar = true
+    IncludeAvatar = true,
+    Min = 1,
+    Max = 999999,
+    Decimals = 2,
+    Unique = true,
+    Sides = 6,
+    Length = 16,
+    Charset = "alphanumeric"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -350,7 +399,14 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 var queryOptions = new RandomDataGeneratorQueryOptions {
     Type = "number",
     Count = 1,
-    IncludeAvatar = true
+    IncludeAvatar = true,
+    Min = 1,
+    Max = 999999,
+    Decimals = 2,
+    Unique = true,
+    Sides = 6,
+    Length = 16,
+    Charset = "alphanumeric"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -364,7 +420,14 @@ The API client implements `IDisposable` for proper resource cleanup:
 var queryOptions = new RandomDataGeneratorQueryOptions {
     Type = "number",
     Count = 1,
-    IncludeAvatar = true
+    IncludeAvatar = true,
+    Min = 1,
+    Max = 999999,
+    Decimals = 2,
+    Unique = true,
+    Sides = 6,
+    Length = 16,
+    Charset = "alphanumeric"
 };
 
 using (var apiClient = new RandomDataGeneratorAPIClient("[YOUR_API_KEY]"))
