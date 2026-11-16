@@ -1,6 +1,6 @@
 # [Random Data Generator API](https://apiverve.com/marketplace/randomgenerator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Random Data Generator produces random numbers in any range (whole or decimal, with or without repeats), dice of any size, coin flips, booleans, random strings, UUIDs, and mock names, emails, addresses and dates for application testing. Numbers, dice, coins, booleans and strings come from a cryptographically secure generator. Paid plans can generate batches up to 100 items.
+Random Data Generator is a random data API that produces random numbers in any range (whole or decimal, with or without repeats), dice of any size, coin flips, booleans, random strings, UUIDs, and mock names, emails, addresses and dates for application testing. Numbers, dice, coins, booleans and strings come from a cryptographically secure generator. Paid plans can generate batches up to 100 items.
 
 The Random Data Generator API provides a simple, reliable way to integrate random data generator functionality into your applications. Built for developers who need production-ready random data generator capabilities without the complexity of building from scratch.
 
