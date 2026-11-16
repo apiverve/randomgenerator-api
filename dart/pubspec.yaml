@@ -1,0 +1,16 @@
+name: apiverve_randomgenerator
+description: "Random Data Generator is a random data API that produces random numbers in any range (whole or decimal, with or without repeats), dice of any size, coin flips, booleans, random strings, UUIDs, and mock names, emails, addresses and dates for application testing. Numbers, dice, coins, booleans and strings come from a cryptographically secure generator. Paid plans can generate batches up to 100 items."
+version: 1.2.6
+homepage: https://apiverve.com/marketplace/randomgenerator?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/randomgenerator-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
